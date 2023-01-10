@@ -22,3 +22,21 @@
                 9.create header&footer
                   -ng g c header
                   -ng g c footer
+                
+                10.Component Designing
+
+                11.Backend Integration
+
+                12.Angular Services
+                   - ng g s products/api
+
+                13.import HttpClientModule in product module
+
+                14.Dependancy inject HttpClient Class in api.service
+
+                15.Integration
+
+                16.Design of Wish list and Cart
+
+                17.Search concept
+                   -ng g p products/pipes/filter

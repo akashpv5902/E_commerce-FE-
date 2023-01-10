@@ -1,1 +1,44 @@
-<p>wish-list works!</p>
+<!-- empty cart -->
+<div class="container border border-primary m-5 p-5" *ngIf="emsg">
+    <div class="row text-center" >
+        <div class="col" >
+            <img src="https://media1.tenor.com/images/dc542abacb25a0bdef5849c175f62951/tenor.gif?itemid=7398665" width="400px" alt="" srcset="">
+            <h3 class="mt-3">Your Wish List is Empty</h3>
+            <button routerLink="/" class="btn btn-primary"><i class="fa fa-cart-plus"></i></button>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- Wishlist with conetent -->
+
+<!-- Section-->
+<section class="py-5">
+    <div class="container px-4 px-lg-5 mt-5 text-center">
+        <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+            <div class="col mb-5" *ngFor="let product of wishlist">
+                <div class="card h-100">
+                    <!-- Product image-->
+                    <img class="card-img-top" [src]="product.image" alt="..." />
+                    <!-- Product details-->
+                    <div class="card-body p-4">
+                        <div class="text-center">
+                            <!-- Product name-->
+                            <h5 class="fw-bolder">{{product.title}}</h5>
+                            <!-- Product price-->
+                            ${{product.price}}
+                        </div>
+                    </div>
+                    <!-- Product actions-->
+                    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                        <div class="text-center"><button class="btn btn-outline-danger mt-auto" (click)="deletewish(product)"  href="#"><i class="fa fa-trash"></i></button>
+                            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                            <a class="btn btn-outline-success mt-auto" routerLink="cart" href="#"><i class="fa fa-cart-plus"></i></a></div>
+                        <!-- <div class="text-center"><a class="btn btn-outline-success mt-auto" routerLink="cart" href="#"><i class="fa fa-cart-plus"></i></a></div> -->
+                    </div>
+                </div>
+            </div>
+            </div>
+            </div>
+            </section>

@@ -6,3 +6,16 @@
 body{
     font-family: 'Abril Fatface', cursive;
 }
+
+.card-img-top:hover{
+    /* scale: 1.25; */
+    transform: scale(1.25);
+    transition: 0.6s;
+
+}
+
+.card-img-top{
+    transition: 0.6s;
+    height: 7cm;
+    width: 6cm;
+}
