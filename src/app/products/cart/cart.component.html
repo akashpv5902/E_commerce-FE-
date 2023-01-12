@@ -1,4 +1,5 @@
 <!-- empty cart -->
+<div class="p3" *ngIf="cartitems.length == 0">
 <div class="container border border-primary m-5 p-5">
     <div class="row text-center">
         <div class="col">
@@ -8,12 +9,13 @@
         </div>
     </div>
 </div>
+</div>
 
 
 
 <!-- Cart with content -->
 
-
+<div class="p3"*ngIf="cartitems.length != 0">
 <div class="conatainer">
     <div class="row">
         <div class="col">
@@ -29,12 +31,12 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>100</td>
-                        <td>Men's T Shirt</td>
-                        <td><img src="https://th.bing.com/th/id/OIP.fDz0I-aiG3lQCO0bCGGFMwHaJ-?pid=ImgDet&rs=1" width="100px" alt=""></td>
-                        <td>lddsvcfdsfdssfsdfsfsdsfcsdfsdfsdfsdfsdfsdfsdfsfsdfsdcefdsxcsdf</td>
-                        <td>500</td>
+                    <tr *ngFor="let product of cartitems let i=index" >
+                        <td>{{i+1}}</td>
+                        <td>{{product.title}}</td>
+                        <td><img src="{{product.image}}" width="100px" alt=""></td>
+                        <td>{{product.description}}</td>
+                        <td>${{product.price}}</td>
                         <td><i class="fa fa-trash text-danger"></i></td>
                     </tr>
                 </tbody>
@@ -47,4 +49,5 @@
             </div>
         </div>
     </div>
+</div>
 </div>

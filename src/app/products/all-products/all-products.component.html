@@ -5,6 +5,7 @@
 
 <!-- Section-->
 <section class="py-5">
+    <div class="p1">
     <div class="container px-4 px-lg-5 mt-5">
         <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-3 justify-content-center">
             <div *ngFor="let product of allproducts | filter: searchterm : 'title' " class="col mb-5">
@@ -25,11 +26,12 @@
                         <div class="text-center">
                             <button  class="btn btn-outline-danger mt-auto" (click)="addtowishlist(product)"  href="#"><i class="fa fa-heart"></i></button>
                             &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-                            <a class="btn btn-outline-success mt-auto" routerLink="cart" href="#"><i class="fa fa-cart-plus"></i></a></div>
+                            <button (click)="addcart(product)" class="btn btn-outline-success mt-auto"  href="#"><i class="fa fa-cart-plus"></i></button></div>
                         <!-- <div class="text-center"><a class="btn btn-outline-success mt-auto" routerLink="cart" href="#"><i class="fa fa-cart-plus"></i></a></div> -->
                     </div>
                 </div>
                 </div>
             </div>
             </div>
+        </div>
             </section>

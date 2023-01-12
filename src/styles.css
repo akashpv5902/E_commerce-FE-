@@ -19,3 +19,19 @@ body{
     height: 7cm;
     width: 6cm;
 }
+
+.navbar{
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1;
+}
+.p1{
+    margin-top: 100px;
+}
+.p2{
+    margin-top: 100px;
+}
+.p3{
+    margin-top: 100px;
+}

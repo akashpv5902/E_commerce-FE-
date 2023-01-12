@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ApiService } from '../api.service';
+import { CartService } from '../cart.service';
 
 @Component({
   selector: 'app-all-products',
@@ -12,7 +13,7 @@ export class AllProductsComponent  {
 
   searchterm ='';
 
-   constructor(private api:ApiService){}
+   constructor(private api:ApiService,private cart:CartService){}
   ngOnInit():void{
     this.api.getProducts().subscribe(
       (data:any)=>{
@@ -35,6 +36,11 @@ export class AllProductsComponent  {
         alert(result.error.message)
       }
     )
+    }
+
+
+    addcart(product:any){
+      this.cart.addcart(product)
     }
   }
 
