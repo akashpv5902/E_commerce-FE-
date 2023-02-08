@@ -37,17 +37,69 @@
                         <td><img src="{{product.image}}" width="100px" alt=""></td>
                         <td>{{product.description}}</td>
                         <td>${{product.price}}</td>
-                        <td><i class="fa fa-trash text-danger"></i></td>
+                        <td><i (click)="removeitem(product)" class="fa fa-trash text-danger"></i></td>
                     </tr>
                 </tbody>
             </table>
             <div style="float:right ;" class="mb-3">
-                <button class="btn btn-danger">Empty Cart</button> &nbsp;
+                <button (click)="removeall()" class="btn btn-danger">Empty Cart</button> &nbsp;
                 <button class="btn btn-warning">View More</button> &nbsp;
-                <button class="btn btn-success">Check Out</button> &nbsp;
-                <b class="me-3">Grand Total:500</b>
+                <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">Check Out</button> &nbsp;
+                <b class="me-3">Grand Total:&nbsp;{{grand}}</b>
             </div>
         </div>
     </div>
 </div>
 </div>
+
+
+<!-- !-- Button trigger modal 
+<!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    Launch demo modal
+  </button> -->
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <h2> <b> Delivery address </b></h2>
+          <form action="" class="form-control"><br>
+            <input class="form-control" type="text" placeholder="name"><br>
+            <input class="form-control" type="text" placeholder="address/house No"><br>
+            <input class="form-control" type="text" placeholder="pin"><br>
+            <input class="form-control" type="text" placeholder="state"><br>
+            <input class="form-control" type="text" placeholder="country"><br>
+            <input class="form-control" type="text" placeholder="phone"><br>
+            <input class="form-control" type="text" placeholder="E mail id"><br>
+
+            
+
+
+
+
+          </form>
+          <div [ngSwitch]="grand">
+            <h4>Discounts</h4>
+            <img *ngSwitchCase="3" (click)="discount3per($event.target)" src="https://t3.ftcdn.net/jpg/01/58/88/16/240_F_158881694_hzvfEq0RQXeDHtDDRYDVF94EsCSs4Fxb.jpg" alt="" width="100px">
+            <img *ngSwitchCase="10" (click)="discount10per()" src="https://www.kindpng.com/picc/m/45-451334_10-percent-off-png-download-image-10-discount.png" alt="" width="100px">
+            <img *ngSwitchCase="30" (click)="discount30per()" src="https://thumbs.dreamstime.com/b/off-d-vector-symbol-135553791.jpg" width="100px" alt="">
+            <img *ngSwitchCase="50" (click)="discount50per()" src="https://rlv.zcache.co.uk/50_fifty_percent_off_discount_sale_sticker-rec106c0ab3e44f2f96dfded8f336d94e_v9waf_8byvr_540.jpg" width="100px" alt="">
+            <img *ngSwitchDefault="3" (click)="discount3per($event.target)" src="https://www.trafficforme.com/home/wp-content/uploads/2017/11/promo.jpg" width="100px" alt="">
+          </div>
+
+          <div>
+            <h5>Your Grand Total:{{updatetotal}}</h5>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" (click)="proceed()"  data-bs-dismiss="modal" >Proceed</button>
+        </div>
+      </div>
+    </div>
+  </div>

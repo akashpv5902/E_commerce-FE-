@@ -38,7 +38,7 @@ export class WishListComponent {
         alert(result.message)
         this.router.navigateByUrl('wish-list')
         this.wishlist=result.wishlist
-        if(this.wishlist.length === 0){
+        if(this.wishlist.length == 0){
           this.emsg='Empty Wishlist'
         }
         // window.location.reload()
